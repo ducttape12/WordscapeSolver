@@ -10,7 +10,7 @@ And don't forget to check out [www.keithott.com](www.keithott.com) for more awes
 # Disclaimers
 Wordscapes is owned by PeopleFun, Inc.  This application is not affiliated or endorsed by PeopleFun, Inc.
 
-#License
+# License
 Copyright 2017 Keith Ott
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
