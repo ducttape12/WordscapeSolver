@@ -30,7 +30,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Copyright 2017 Keith Ott</p>
-                    <p>Wordscapes is owned by PeopleFun, Inc.  This application is not affiliated or endorsed by PeopleFun, Inc.</p>
+                    <p>Wordscapes is owned by PeopleFun, Inc. This application is not affiliated or endorsed by PeopleFun, Inc.</p>
                     <p>Visit <a href="http://www.keithott.com/" target="_blank">www.KeithOtt.com</a> for more awesome software!</p>
                 </div>
                 <div class="modal-footer">
@@ -44,7 +44,7 @@
         <a class="navbar-brand pointer" href="javascript:;"><i class="fa fa-check-square" aria-hidden="true"></i> Wordscapes Solver</a>
         <button id="about" class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#aboutModal"><i class="fa fa-question" aria-hidden="true"></i></button>
     </nav>
-    
+
     <div id="loading" class="text-center">
         <h1><i class="fa fa-spinner fa-pulse fa-fw"></i> Loading...</h1>
     </div>
@@ -53,9 +53,13 @@
         <div class="form-group">
             <label for="pattern">Enter the word you're solving for, substituting ? for each letter you don't know:</label>
             <input type="text" class="form-control" id="pattern" placeholder="">
-            <small class="form-text text-muted">For example, if the word you're looking for is <span class="box">S</span><span class="box">&nbsp;</span><span class="box">D</span><span class="box">A</span>, enter "s?da".<br />
-            If you don't know anything about the word, enter that many ?'s (for example, for <span class="box">&nbsp;</span><span class="box">&nbsp;</span><span class="box">&nbsp;</span> enter "???").
-            </small>
+            <ul class="form-text">
+                <li><small class="text-muted">For example, if the word you're looking for is <span class="box">S</span><span class="box">&nbsp;</span><span class="box">D</span><span class="box">A</span>, enter "s?da".</small></li>
+                <li><small class="text-muted">If you don't know anything about the word, enter that many ?'s (for example, for <span class="box">&nbsp;</span><span class="box">&nbsp;</span><span class="box">&nbsp;</span> enter "???").</small></li>
+            </ul>
+            <!--<small class="form-text text-muted">For example, if the word you're looking for is <span class="box">S</span><span class="box">&nbsp;</span><span class="box">D</span><span class="box">A</span>, enter "s?da".<br />-->
+            <!--If you don't know anything about the word, enter that many ?'s (for example, for <span class="box">&nbsp;</span><span class="box">&nbsp;</span><span class="box">&nbsp;</span> enter "???").-->
+            <!--</small>-->
         </div>
         <div class="form-group">
             <label for="possibleLetters">Enter the letters you have to choose from:</label>
