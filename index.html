@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
@@ -20,18 +21,22 @@
         <h1>Wordscapes Solver</h1>
 
         <div class="form-group">
-            <label for="pattern">Enter the word you're solving for, using ? for each letter you don't know:</label>
+            <label for="pattern">Enter the word you're solving for, substituting ? for each letter you don't know:</label>
             <input type="text" class="form-control" id="pattern" placeholder="">
+            <small class="form-text text-muted">For example, if the word you're looking for is <span class="box">S</span><span class="box">&nbsp;</span><span class="box">D</span><span class="box">A</span>, enter "s?da".<br />
+            If you don't know anything about the word, enter that many ?'s (for example, for <span class="box">&nbsp;</span><span class="box">&nbsp;</span><span class="box">&nbsp;</span> enter "???").
+            </small>
         </div>
         <div class="form-group">
             <label for="possibleLetters">Enter the letters you have to choose from:</label>
             <input type="text" class="form-control" id="possibleLetters" placeholder="">
+            <small class="form-text text-muted">These are the letters at the bottom of the game screen.  They can be entered in any order.</small>
         </div>
         <div class="text-right">
-            <button id="submit" class="btn btn-primary btn-lg">Find Solutions</button>
+            <button id="reset" class="btn btn-warning btn-lg">Reset Form</button> <button id="submit" class="btn btn-primary btn-lg">Find Solutions</button>
         </div>
         <div id="invalidPattern" class="alert alert-danger d-none" role="alert">
-            Please enter the word you're attempting to solve fork with one or more ? for unknown letters.
+            Please enter the word you're attempting to solve with one or more ? for unknown letters.
         </div>
         <div id="invalidPossibleLetters" class="alert alert-danger d-none" role="alert">
             Please enter the possible letters that can make up the word. The number of letters must be greater than or equal to the characters in the above pattern.
