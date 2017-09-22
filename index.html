@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -16,12 +16,48 @@
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
-    
-    
+    <div class="container">
+        <h1>Wordscapes Solver</h1>
+
+        <div class="form-group">
+            <label for="pattern">Enter the word you're solving for, using ? for each letter you don't know:</label>
+            <input type="text" class="form-control" id="pattern" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="possibleLetters">Enter the letters you have to choose from:</label>
+            <input type="text" class="form-control" id="possibleLetters" placeholder="">
+        </div>
+        <div class="text-right">
+            <button id="submit" class="btn btn-primary btn-lg">Find Solutions</button>
+        </div>
+        <div id="invalidPattern" class="alert alert-danger d-none" role="alert">
+            Please enter the word you're attempting to solve for.
+        </div>
+        <div id="invalidPossibleLetters" class="alert alert-danger d-none" role="alert">
+            Please enter the possible letters that can make up the word.
+        </div>
+
+        <br />
+
+        <div id="solutionGroup" class="d-none">
+            <h2>Possible Solutions</h2>
+            <ul class="list-group" id="solutions">
+                <li class="list-group-item">Solution 1</li>
+                <li class="list-group-item">Solution 2</li>
+                <li class="list-group-item">Solution 3</li>
+            </ul>
+        </div>
+    </div>
+
     <script src="scripts/wordList.js"></script>
     <script src="scripts/solver.js"></script>
     <script src="scripts/ui.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            ui.initialize();
+        });
+    </script>
 </body>
 
 </html>
