@@ -56,6 +56,10 @@ var ui = (function() {
             }
         }
     };
+    
+    var about = function() {
+        
+    };
 
     var reset = function() {
         $('#invalidPossibleLetters').addClass('d-none');
