@@ -7,6 +7,13 @@ Try it out at [www.keithott.com/WordscapesSolver](www.keithott.com/WordscapesSol
 
 And don't forget to check out [www.keithott.com](www.keithott.com) for more awesomeness!
 
+# Development
+To run Worscape Solver, install all dependencies with bower:
+
+```bower install```
+
+Then simply open index.html in a browser.
+
 # Disclaimers
 Wordscapes is owned by PeopleFun, Inc.  This application is not affiliated or endorsed by PeopleFun, Inc.
 
