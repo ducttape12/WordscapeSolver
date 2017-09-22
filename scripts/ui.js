@@ -75,7 +75,7 @@ var ui = (function() {
         $('#pattern').val('');
         $('#possibleLetters').val('');
 
-        $('#pattern').focus();
+        $('#possibleLetters').focus();
     };
 
 
@@ -95,9 +95,8 @@ var ui = (function() {
         
         $('#loading').fadeOut(function() {
             $('#contents').removeClass('d-none');
+            reset();
         });
-
-        reset();
     };
 
     return {
