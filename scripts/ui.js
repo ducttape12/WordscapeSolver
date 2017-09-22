@@ -17,20 +17,17 @@ var ui = (function() {
         var possibleLetters = cleanPossibleLetters();
         var pattern = cleanPattern();
         var valid = true;
+        
+        $('#invalidPossibleLetters').addClass('d-none');
+        $('#invalidPattern').addClass('d-none');
 
-        if (possibleLetters.length === 0) {
+        if (possibleLetters.length === 0 || possibleLetters.length < pattern.length) {
             $('#invalidPossibleLetters').removeClass('d-none');
-        }
-        else {
-            $('#invalidPossibleLetters').addClass('d-none');
             valid = false;
         }
-
-        if (pattern.length === 0) {
+        
+        if (pattern.length === 0 || !pattern.includes('?')) {
             $('#invalidPattern').removeClass('d-none');
-        }
-        else {
-            $('#invalidPattern').addClass('d-none');
             valid = false;
         }
 
@@ -40,7 +37,16 @@ var ui = (function() {
     var initialize = function() {
         $('#submit').click(function() {
             if(formValid()) {
+                var matches = solver.findWords(cleanPattern(), cleanPossibleLetters());
                 
+                var solutions = $('#solutions');
+                
+                solutions.empty();
+                $('#solutionGroup').removeClass('d-none');
+                
+                for(var index = 0; index < matches.length; index++) {
+                    solutions.append('<li class="list-group-item">'+ matches[index] + '</li>')
+                }
             }
         });
     };

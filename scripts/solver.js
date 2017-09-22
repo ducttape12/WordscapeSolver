@@ -7,7 +7,7 @@ var solver = (function() {
         });
         
         for(var index = 0; index < pattern.length; index++) {
-            if(pattern[index] == '_') {
+            if(pattern[index] == '?') {
                 continue;
             }
             
