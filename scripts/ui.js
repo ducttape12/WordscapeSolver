@@ -35,25 +35,37 @@ var ui = (function() {
     };
 
     var findMatches = function() {
+        $('#solutionGroup').addClass('d-none');
+        $('#noSolutions').addClass('d-none');
+        
         if (formValid()) {
             var matches = solver.findWords(cleanPattern(), cleanPossibleLetters());
 
             var solutions = $('#solutions');
 
             solutions.empty();
-            $('#solutionGroup').removeClass('d-none');
 
-            for (var index = 0; index < matches.length; index++) {
-                solutions.append('<li class="list-group-item">' + matches[index] + '</li>')
+            if (matches.length > 0) {
+                $('#solutionGroup').removeClass('d-none');
+                for (var index = 0; index < matches.length; index++) {
+                    solutions.append('<li class="list-group-item">' + matches[index] + '</li>')
+                }
+            }
+            else {
+                $('#noSolutions').removeClass('d-none');
             }
         }
     };
-    
+
     var reset = function() {
         $('#invalidPossibleLetters').addClass('d-none');
         $('#invalidPattern').addClass('d-none');
         $('#solutionGroup').addClass('d-none');
-        
+        $('#noSolutions').addClass('d-none');
+
+        $('#pattern').val('');
+        $('#possibleLetters').val('');
+
         $('#pattern').focus();
     };
 
@@ -61,17 +73,17 @@ var ui = (function() {
     var initialize = function() {
         $('#submit').click(findMatches);
         $('#possibleLetters').on('keyup', function(e) {
-            if(e.keyCode === 13) {
+            if (e.keyCode === 13) {
                 findMatches();
             }
         });
         $('#pattern').on('keyup', function(e) {
-            if(e.keyCode === 13) {
+            if (e.keyCode === 13) {
                 findMatches();
             }
         });
         $('#reset').click(reset);
-        
+
         reset();
     };
 
