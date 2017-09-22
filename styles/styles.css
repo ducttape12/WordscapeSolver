@@ -3,10 +3,14 @@ body {
 }
 
 .box {
-    display: inline-block;
-    font-family: monospace;
-    border: 1px solid gray;
-    text-align: center;
-    padding-left: 2px;
-    padding-right: 2px;
+  display: inline-block;
+  font-family: monospace;
+  border: 1px solid gray;
+  text-align: center;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.pointer {
+  cursor: default;
 }
