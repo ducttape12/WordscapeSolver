@@ -2,7 +2,7 @@ var ui = (function() {
     'use strict';
 
     var cleanText = function(text) {
-        return text.trim().replace(/ /g, '');
+        return text.trim().replace(/ /g, '').toLowerCase();
     };
 
     var cleanPossibleLetters = function() {
