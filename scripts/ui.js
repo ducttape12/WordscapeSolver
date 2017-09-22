@@ -87,6 +87,10 @@ var ui = (function() {
             }
         });
         $('#reset').click(reset);
+        
+        $('#loading').fadeOut(function() {
+            $('#contents').removeClass('d-none');
+        });
 
         reset();
     };
