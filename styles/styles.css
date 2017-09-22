@@ -12,6 +12,10 @@ body {
   font-size: 1.3em;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .pointer {
   cursor: default;
 }
