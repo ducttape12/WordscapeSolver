@@ -1,0 +1,23 @@
+{
+  "name": "wordscapesolver",
+  "authors": [
+    "ducttape12 <ducttape12@yahoo.com>"
+  ],
+  "description": "A solver for the Wordscapes mobile game",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-beta",
+    "jquery": "3.2.1",
+    "underscore": "1.8.3",
+    "popper.js": "^1.12.5"
+  }
+}
