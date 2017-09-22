@@ -21,14 +21,20 @@ var ui = (function() {
         $('#invalidPossibleLetters').addClass('d-none');
         $('#invalidPattern').addClass('d-none');
 
-        if (possibleLetters.length === 0 || possibleLetters.length < pattern.length) {
-            $('#invalidPossibleLetters').removeClass('d-none');
-            valid = false;
-        }
-
         if (pattern.length === 0 || !pattern.includes('?')) {
             $('#invalidPattern').removeClass('d-none');
             valid = false;
+            
+            $('#pattern').focus();
+            $('#pattern').select();
+        }
+
+        if (possibleLetters.length === 0 || possibleLetters.length < pattern.length) {
+            $('#invalidPossibleLetters').removeClass('d-none');
+            valid = false;
+            
+            $('#possibleLetters').focus();
+            $('#possibleLetters').select();
         }
 
         return valid;
@@ -54,11 +60,10 @@ var ui = (function() {
             else {
                 $('#noSolutions').removeClass('d-none');
             }
+            
+            $('#pattern').focus();
+            $('#pattern').select();
         }
-    };
-    
-    var about = function() {
-        
     };
 
     var reset = function() {
