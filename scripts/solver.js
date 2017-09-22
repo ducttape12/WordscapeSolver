@@ -1,5 +1,5 @@
 var solver = (function() {
-    
+    'use strict';
     
     var filterWordList = function(pattern) {
         var filteredWords = _.filter(wordList.getWordList(), function(word) {
