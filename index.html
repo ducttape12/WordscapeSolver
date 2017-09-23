@@ -42,7 +42,7 @@
 
     <nav class="navbar navbar-dark bg-dark justify-content-between fixed-top">
         <a class="navbar-brand pointer" href="javascript:;">Wordscapes Solver</a>
-        <button id="about" class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#aboutModal"><i class="fa fa-question" aria-hidden="true"></i></button>
+        <button id="about" class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#aboutModal"><i class="fa fa-info-circle" aria-hidden="true"></i><span class="sr-only">About Wordscapes Solver</span></button>
     </nav>
 
     <div id="loading" class="text-center">
@@ -52,27 +52,22 @@
 
     <div id="contents" class="container d-none">
         <div class="form-group">
-            <label for="possibleLetters">Enter the letters you have to choose from:</label>
+            <label for="possibleLetters">Possible Letters:</label>
             <input type="text" class="form-control" id="possibleLetters" placeholder="">
             <small class="form-text text-muted">These are the letters at the bottom of the game screen.  They can be entered in any order.</small>
         </div>
         <div class="form-group">
-            <label for="pattern">Enter the word you're solving for, substituting ? for each letter you don't know:</label>
+            <label for="pattern">Unknown Word:</label>
             <input type="text" class="form-control" id="pattern" placeholder="">
             <ul class="form-text">
+                <li><small class="text-muted">This is the word you're trying to solve for.  Use "?" for each letter that you don't know.</small></li>
                 <li><small class="text-muted">For example, if the word you're looking for is <span class="nowrap"><span class="box">S</span><span class="box">&nbsp;</span><span class="box">D</span><span class="box">A</span>,</span> enter <span class="nowrap">"s?da"</span>.</small></li>
                 <li><small class="text-muted">If you don't know anything about the word, enter that many ?'s (for example, for <span class="nowrap"><span class="box">&nbsp;</span><span class="box">&nbsp;</span><span class="box">&nbsp;</span></span> enter <span class="nowrap">"???"</span>).</small></li>
             </ul>
-            <!--<small class="form-text text-muted">For example, if the word you're looking for is <span class="box">S</span><span class="box">&nbsp;</span><span class="box">D</span><span class="box">A</span>, enter "s?da".<br />-->
-            <!--If you don't know anything about the word, enter that many ?'s (for example, for <span class="box">&nbsp;</span><span class="box">&nbsp;</span><span class="box">&nbsp;</span> enter "???").-->
-            <!--</small>-->
         </div>
         <div class="row">
-            <div class="col-sm-6 col-md-4 ml-md-auto ml-lg-auto col-lg-3">
-                <button id="reset" class="btn btn-warning btn-lg btn-block"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <button id="submit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check" aria-hidden="true"></i> Find Solutions</button>
+            <div class="col-sm-6 col-md-5 col-lg-4 ml-md-auto ml-lg-auto ">
+                <button id="submit" class="btn btn-success btn-lg btn-block"><i class="fa fa-check" aria-hidden="true"></i> Find Solutions</button>
             </div>
         </div>
 
@@ -85,21 +80,31 @@
             Please enter the word you're attempting to solve with one or more ? for unknown letters.
         </div>
 
-
-        <div id="solutionGroup" class="d-none">
-            <h2>Possible Solutions</h2>
-            <ul class="list-group" id="solutions">
+        <div id="solutionSection" class="d-none">
+            <h2>Matching Words</h2>
+            <ul class="list-group" id="solutionList">
                 <li class="list-group-item">Solution 1</li>
                 <li class="list-group-item">Solution 2</li>
                 <li class="list-group-item">Solution 3</li>
             </ul>
-        </div>
-        <div id="noSolutions" class="d-none">
-            <div class="alert alert-primary" role="alert">
-                No solutions found!
+            <div id="noSolutions" class="d-none">
+                <div class="alert alert-primary" role="alert">
+                    <h4 class="alert-heading">No matches found!</h4>
+                    <p>Tip: If you're on a phone or tablet, autocorrect may have changed some of your letters. Double-check that everything was entered correctly.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-4 ml-md-auto ml-lg-auto">
+                    <button id="newUnknownWord" class="btn btn-primary btn-lg btn-block"><i class="fa fa-question-circle-o" aria-hidden="true"></i> New Unknown Word</button>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4">
+                    <button id="reset" class="btn btn-warning btn-lg btn-block"><i class="fa fa-refresh" aria-hidden="true"></i> Reset Form</button>
+                </div>
             </div>
         </div>
     </div>
+    
+    <br />
 
     <script src="scripts/wordList.js"></script>
     <script src="scripts/solver.js"></script>

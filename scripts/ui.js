@@ -24,7 +24,7 @@ var ui = (function() {
         if (pattern.length === 0 || !pattern.includes('?')) {
             $('#invalidPattern').removeClass('d-none');
             valid = false;
-            
+
             $('#pattern').focus();
             $('#pattern').select();
         }
@@ -32,7 +32,7 @@ var ui = (function() {
         if (possibleLetters.length === 0 || possibleLetters.length < pattern.length) {
             $('#invalidPossibleLetters').removeClass('d-none');
             valid = false;
-            
+
             $('#possibleLetters').focus();
             $('#possibleLetters').select();
         }
@@ -41,18 +41,19 @@ var ui = (function() {
     };
 
     var findMatches = function() {
-        $('#solutionGroup').addClass('d-none');
+        $('#solutionSection').addClass('d-none');
+        $('#solutionList').addClass('d-none');
         $('#noSolutions').addClass('d-none');
-        
+
         if (formValid()) {
             var matches = solver.findWords(cleanPattern(), cleanPossibleLetters());
 
-            var solutions = $('#solutions');
+            var solutions = $('#solutionList');
 
             solutions.empty();
 
             if (matches.length > 0) {
-                $('#solutionGroup').removeClass('d-none');
+                $('#solutionList').removeClass('d-none');
                 for (var index = 0; index < matches.length; index++) {
                     solutions.append('<li class="list-group-item">' + matches[index] + '</li>')
                 }
@@ -60,24 +61,39 @@ var ui = (function() {
             else {
                 $('#noSolutions').removeClass('d-none');
             }
-            
-            $('#pattern').focus();
-            $('#pattern').select();
+
+            $('#solutionSection').removeClass('d-none');
+            $('html, body').animate({
+                scrollTop: $("#solutionSection").offset().top
+            }, 250);
         }
     };
 
     var reset = function() {
         $('#invalidPossibleLetters').addClass('d-none');
         $('#invalidPattern').addClass('d-none');
-        $('#solutionGroup').addClass('d-none');
+        $('#solutionSection').addClass('d-none');
+        $('#solutionList').addClass('d-none');
         $('#noSolutions').addClass('d-none');
 
         $('#pattern').val('');
         $('#possibleLetters').val('');
 
         $('#possibleLetters').focus();
+        
+        $('html, body').animate({
+            scrollTop: 0
+        }, 250);
     };
 
+    var newUnknownWord = function() {
+        $('#pattern').focus();
+        $('#pattern').select();
+        
+        $('html, body').animate({
+            scrollTop: 0
+        }, 250);
+    };
 
     var initialize = function() {
         $('#submit').click(findMatches);
@@ -92,7 +108,8 @@ var ui = (function() {
             }
         });
         $('#reset').click(reset);
-        
+        $('#newUnknownWord').click(newUnknownWord);
+
         $('#loading').fadeOut(function() {
             $('#contents').removeClass('d-none');
             reset();
