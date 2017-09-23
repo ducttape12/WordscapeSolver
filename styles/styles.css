@@ -19,3 +19,7 @@ body {
 .pointer {
   cursor: default;
 }
+
+.list-group {
+  margin-bottom: 10px;
+}
