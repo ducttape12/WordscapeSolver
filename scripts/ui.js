@@ -1,5 +1,8 @@
 var ui = (function() {
     'use strict';
+    
+    const SCROLL_SPEED = 250;
+    const NAV_HEIGHT = 56;
 
     var cleanText = function(text) {
         return text.trim().replace(/ /g, '').toLowerCase();
@@ -64,8 +67,8 @@ var ui = (function() {
 
             $('#solutionSection').removeClass('d-none');
             $('html, body').animate({
-                scrollTop: $("#solutionSection").offset().top
-            }, 250);
+                scrollTop: $("#solutionSection").offset().top - NAV_HEIGHT
+            }, SCROLL_SPEED);
         }
     };
 
@@ -83,7 +86,7 @@ var ui = (function() {
         
         $('html, body').animate({
             scrollTop: 0
-        }, 250);
+        }, SCROLL_SPEED);
     };
 
     var newUnknownWord = function() {
@@ -92,7 +95,7 @@ var ui = (function() {
         
         $('html, body').animate({
             scrollTop: 0
-        }, 250);
+        }, SCROLL_SPEED);
     };
 
     var initialize = function() {
