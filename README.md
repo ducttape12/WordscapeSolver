@@ -3,7 +3,7 @@ A free solver for the Wordscapes Android / iOS app
 
 Simply enter the word you're trying to solve (using ? in place of unknown letters) and the possible letters to choose from.  Click "Find Solutions" and see all possible words that fit what you're looking for!
 
-Try it out at [www.keithott.com/wordscapes](www.keithott.com/wordscapes)
+Try it out at [https://www.keithott.com/software/wordscapes-solver/](https://www.keithott.com/software/wordscapes-solver/)
 
 And don't forget to check out [www.keithott.com](www.keithott.com) for more awesomeness!
 
